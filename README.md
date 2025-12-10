@@ -21,25 +21,39 @@ This project provides a minimal example of a Java Swing application (`JFrame`) a
 
 ### 💻 Code Snippet (SimpleFrameApp.java)
 
-The core application logic is handled by adding an `ActionListener` to each button, which calls the appropriate `JOptionPane.show...Dialog` method.
+The core application logic is handled by adding an `ActionListener` to submit button, which calls the appropriate `JOptionPane.show...Dialog` method.
 
 ```java
-public class SimpleFrameApp {
-
-    public static void main(String[] args) {
-        // Setup the Main Frame
-        JFrame frame = new JFrame("Simple Dialog Demo");
-        frame.setSize(300, 150);
-        // ... (setup other buttons and layout)
-
-        // Example: Message Dialog Button Logic
-        JButton messageButton = new JButton("Show Message");
-        messageButton.addActionListener(e -> {
-            JOptionPane.showMessageDialog(frame, "Hello! This is a simple message dialog.");
+ //when the form is submiited then following action performs
+        submitBtn.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                String name = nameField.getText();
+                
+                //Show Popup Message when submit the given form
+                
+                int response = JOptionPane.showConfirmDialog(null,"Form Submitted Successfully!\n\n"+ name+
+                        "\n\nDo you Like To Apply any  Scholarship from our College\n\n","NCKBCS-Registration-2025-26",
+                        JOptionPane.YES_NO_OPTION);
+                if(response==JOptionPane.YES_NO_OPTION)
+                {
+                    String email = JOptionPane.showInputDialog("Enter Your Email "+name);
+                    if(email!=null && !email.trim().isEmpty())
+                    {
+                        JOptionPane.showMessageDialog(null, "Our Scholarship Department will be inform you on following email"
+                            +" Address\n\n "+ email);
+                    }
+                    else
+                    {
+                         JOptionPane.showMessageDialog(null, "Please Enter Appropriate Email ID");
+                    }
+                }
+                else
+                {
+                     JOptionPane.showMessageDialog(null, "Your Response has been Recorded");
+                    
+                }
+            }
+            
         });
-
-        // ... (rest of the code for Input and Confirmation dialogs)
-
-        frame.setVisible(true);
-    }
-}
