@@ -1,4 +1,4 @@
-## 🖼️ Simple Java Frame and Dialog Boxes Demo
+## 🖼️ Simple Java Frame(Student Addmission Form) and Dialog Boxes Demo
 
 This project provides a minimal example of a Java Swing application (`JFrame`) and demonstrates the use of three common `JOptionPane` dialog types triggered by buttons.
 
@@ -14,12 +14,15 @@ This project provides a minimal example of a Java Swing application (`JFrame`) a
 ---
 
 ### 📸 Project Output Screenshots
-
+<img src="./IMAGES/1.png" ><hr>
+<img src="./IMAGES/2.png" ><hr>
+<img src="./IMAGES/3.png" >
+<img src="./IMAGES/4.png" >
 
 
 ---
 
-### 💻 Code Snippet (SimpleFrameApp.java)
+### 💻 Code Snippet (AddmissionForm.java)
 
 The core application logic is handled by adding an `ActionListener` to submit button, which calls the appropriate `JOptionPane.show...Dialog` method.
 
